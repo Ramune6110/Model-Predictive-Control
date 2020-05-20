@@ -1,11 +1,12 @@
-% Optimization
-function out = Optimization(t_pre, x, u_pre, param)
-    global  Control_dt t_int u_int x_int T
+% Optimizati
+function out = Optimization(t_pre, x, xEnd, u_pre, param)
+    global  Control_dt t_int u_int x_int x_end T
     t_int  = t_pre;
     x_int  = x;
+    x_end  = xEnd;
     u_int  = u_pre;
     % •]‰¿‹æŠÔ
-    T      = param.T;
+    T  = param.T;
     % —\‘ª‹æŠÔ
     Hu = param.Hu;
     % dt
@@ -14,6 +15,7 @@ function out = Optimization(t_pre, x, u_pre, param)
     options = optimoptions('fmincon','Algorithm','Interior-point');
     % Initial parameter
     u0 = zeros(T, 1);
+    ones(30, 2)
     u0(1 : T, 1) = u_int;
     % •]‰¿ŠÖ”‚ğÅ¬‚É‚·‚é“ü—Í‚ğ‹‚ß‚é fmincon‚ğg—p
     % x = fmincon(fun,x0,A,b,Aeq,beq,lb,ub,nonlcon,options)

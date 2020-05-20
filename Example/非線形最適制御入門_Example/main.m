@@ -11,6 +11,7 @@ param = ModelParam();
 % Initial condition
 t     = param.ts;
 xTrue = [param.x1; param.x2];
+xEnd  = [param.x1_end; param.x2_end];
 u     = param.u;
 % time
 dt      = param.dt;
@@ -31,7 +32,7 @@ result.u     = [result.u; u];
 tic;
 for i = 1:nsteps
     t = t + dt;
-    u = Optimization(t_pre, xTrue, u_pre, param);
+    u = Optimization(t_pre, xTrue, xEnd, u_pre, param);
     xTrue = Dynamics(xTrue, u, dt);
     
     t_pre = t;

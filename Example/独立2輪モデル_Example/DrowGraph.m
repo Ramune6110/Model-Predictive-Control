@@ -17,7 +17,7 @@ function [] = DrowGraph(result, endtime, t_vec)
     plot(result.time, result.xTrue(:, 3),'k','Linewidth',1); hold on; grid on;
     xlim([0 endtime]);
     xlabel('{\ittime}','FontName','Times New Roman','Fontsize',10.5)
-    ylabel('{\itx}_{2}({\itt})','FontName','Times New Roman','Fontsize',10.5)
+    ylabel('{\itx}_{3}({\itt})','FontName','Times New Roman','Fontsize',10.5)
 
     fig2 = figure(2);
     subplot(2, 1, 1);

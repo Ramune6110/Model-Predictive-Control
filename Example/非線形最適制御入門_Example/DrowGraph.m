@@ -1,6 +1,6 @@
 function [] = DrowGraph(result, endtime, t_vec)
     % Figure
-    figure(1);
+    fig = figure(1);
     subplot(3, 1, 1);
     plot(result.time, result.xTrue(:, 1),'k','Linewidth',1); hold on; grid on;
     xlim([0 endtime]);
@@ -20,4 +20,5 @@ function [] = DrowGraph(result, endtime, t_vec)
     xlim([0 endtime]); ylim([-1 1]); grid on;
     xlabel('{\ittime}','FontName','Times New Roman','Fontsize',10.5)
     ylabel('{\itu}({\itt})','FontName','Times New Roman','Fontsize',10.5)
+    saveas(fig,'Simulation result.png')
 end
